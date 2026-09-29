@@ -48,6 +48,7 @@ nav:
       - ELI5 Comment Convention: dev/eli5-comment-convention.md
       - Extending the IDE: dev/extending-the-ide.md
       - Design Mode & Widget SDK (Spec): dev/design-mode-spec.md
+      - Workflows (Spec): dev/workflows-spec.md
 
 markdown_extensions:
   - admonition
