@@ -14,8 +14,10 @@ locally on your GPU or in the cloud.
 | **DAG Pipeline** | Autonomous sub-agent pipeline — each role runs on the model you assign |
 | **Fallback Tiers** | Multi-provider failover chain with API keys and live balances |
 | **MCP Hub** | Connect Model Context Protocol servers (marketplace + GitHub installs) |
+| **Marketplace** | Built-in catalog **plus** an external marketplace (Open VSX) that only offers what Axion can run |
 | **Developer Tools** | Toolchain detection and one-click installs for compilers and debuggers |
 | **Usage Analytics** | Token spend, credits, and live provider balances |
+| **Report a Bug** | One-click pre-filled issues on GitHub or Gitea - and it opens itself when an error is thrown |
 
 ## Three workspace modes
 
@@ -31,4 +33,5 @@ The selected mode is saved **per workspace** and restored when you reopen it.
 
 - New here? Start with [Getting Started](manual/getting-started.md).
 - Want to configure AI providers? Read [Fallback Tiers](manual/fallback-tiers.md).
+- Hit a problem? See [Report a Bug](manual/report-a-bug.md).
 - Curious how it works inside? The [Developer Wiki](dev/architecture.md) explains everything ELI5.

@@ -56,7 +56,36 @@ The default agent driving all of this is **Axion Agent** — see
 [Axion Agent](axion-agent.md) for its full capability set, default MCP toolkit, and
 how to uninstall it.
 
-## Message history
+## The composer toolbar
 
-Every conversation is stored in the encrypted vault. Open **History** in the icon
-rail to browse and restore past sessions.
+The row of icons under the prompt box is laid out in three groups:
+
+| Position | Controls |
+|----------|----------|
+| **Left** | **Attach** (files/media/symbols) and **Skills & Agents** (toggle which skills and agents are injected into the prompt). |
+| **Centre** | **Auto Continue**, **Auto Router**, and **Fallback** - each opens a flyout of presets plus a link to its full configuration view. |
+| **Right** | **Context / Compact**, **Optimize prompt**, and **Send** (or the amber **Queue** button while the agent is busy). |
+
+## Context / Compact
+
+The **Context / Compact** icon on the right does two jobs:
+
+- **Hover** it to see context usage at a glance.
+- **Click** it to open a popup with:
+  - a usage bar and the breakdown (system prompt, attached context, conversation
+    history),
+  - **Compact & compress this session now** - runs the active compactor over your
+    pinned files and open tabs immediately, and folds older conversation turns into a
+    single summary note. The popup reports exactly how many tokens were saved.
+  - **Open Context & Budget…** - jumps to the full Context view.
+
+!!! tip "Compact vs. usage"
+    **Context usage** just *shows* you the numbers. **Compact** actually *changes* the
+    session right away, making the next prompt smaller.
+
+## New Session
+
+The **New Session** icon sits in the chat header, immediately to the left of the active
+DAG label. Click it to clear the conversation and start fresh.
+
+## Message history

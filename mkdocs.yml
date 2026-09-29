@@ -43,6 +43,7 @@ nav:
       - Usage Analytics: manual/usage-analytics.md
       - Theming: manual/theming.md
       - Activity History: manual/activity-history.md
+      - Report a Bug: manual/report-a-bug.md
   - Developer Wiki:
       - Architecture Overview: dev/architecture.md
       - Building & Debugging: dev/building-debugging.md

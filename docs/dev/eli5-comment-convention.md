@@ -6,10 +6,12 @@ the project, not a suggestion.
 
 ## The rule
 
-1. Every class, service, command handler, and non-obvious property gets an ELI5
+1. Every class, service, command handler, property, and non-obvious block gets an ELI5
    comment — one or two sentences a curious beginner would understand.
-2. When you change behavior, **change the comment in the same commit**.
-3. Comments explain *why and what for*, not just what the line does.
+2. **XAML counts too.** Every window and custom control opens with an ELI5 comment
+   describing its layout or purpose.
+3. When you change behavior, **change the comment in the same commit**.
+4. Comments explain *why and what for*, not just what the line does.
 
 ## Format
 
@@ -29,14 +31,32 @@ For inline logic:
 public void RegisterEditorChange()
 ```
 
-## Where it already applies
+## Coverage
+
+Coverage is **100%**: every `.cs` and `.axaml` file under `src/` and `tests/` contains
+at least one ELI5 comment (603 comments at the time of writing). Audit before you
+commit:
+
+```powershell
+Get-ChildItem -Recurse -File -Include *.cs,*.axaml -Path src,tests |
+  Where-Object { $_.FullName -notmatch '\\(bin|obj)\\' } |
+  Where-Object { (Get-Content $_.FullName -Raw) -notmatch 'ELI5' } |
+  Select-Object FullName
+```
+
+An empty result means full coverage.
+
+## Where it applies
 
 - Every service in `Axion.Infrastructure` (`SqliteEncryptedDatabase`,
-  `HybridAiRouter`, `LibGit2SharpGitService`, ...)
+  `HybridAiRouter`, `LibGit2SharpGitService`, `OpenVsxMarketplaceService`,
+  `BugReportService`, ...)
 - Every command and computed property in `WorkspaceViewModel`
 - Every model with non-obvious semantics (`AgentTask.AssignedModel`,
-  `ProviderLiveBalance`, `AppMode`, ...)
-- Theme files, XAML regions, and generated docs
+  `ProviderLiveBalance`, `AppMode`, `AutoContinueConfiguration`, ...)
+- Every window and custom control in `Axion.App` (`WorkspaceWindow.axaml`,
+  `BugReportWindow.axaml`, `TwoColorDiffControl.axaml`, ...)
+- Theme files and generated docs
 
 ## Why
 

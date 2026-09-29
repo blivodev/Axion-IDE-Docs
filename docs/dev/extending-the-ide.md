@@ -66,3 +66,5 @@ created in `InitializeDatabase()`.
 | A new marketplace category | `MarketplaceCategory` + `InitializeMarketplaceCatalog` |
 | A new diagnostic tab | `DiagnosticTabControl` in WorkspaceWindow.axaml |
 | A new theme | Copy a `Themes/*.axaml`, add it to `ThemeManager` + Settings combo |
+| A new external-marketplace kind | `ExternalItemKind` enum + `ExternalExtensionAnalyzer.Analyze` + a `RegisterExternal*` method in `WorkspaceViewModel` |
+| A new issue tracker | `BugReportService` constructor (GitHub/Gitea URLs) + `BuildIssueUrl` |

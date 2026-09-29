@@ -58,6 +58,8 @@ See [Fallback Tiers](fallback-tiers.md) for multi-tier failover.
 | `Ctrl+Enter` (in composer) | Send or queue the prompt |
 | `Ctrl+Shift+P` | Command palette |
 | `Ctrl+M` (suggested) | Cycle workspace mode |
+| `Ctrl+B` | Toggle the right sidebar |
+| `F1` | Command palette (same as Ctrl+Shift+P) |
 
 ## Auto-save
 
@@ -67,3 +69,9 @@ Unsaved tabs show an **asterisk (*)**. Axion auto-saves:
 - after **10 unsaved edits** in the active file.
 
 Each auto-save is logged in **Logs**.
+
+## If something goes wrong
+
+**Help ? Report a Bug…** opens a dialog that builds a pre-filled issue for GitHub or
+Gitea - and it opens by itself when Axion hits an unexpected error. See
+[Report a Bug](report-a-bug.md).

@@ -1,6 +1,6 @@
 # Architecture Overview
 
-Axion IDE is an Avalonia 11+ desktop app on .NET 10 with a clean four-layer split.
+Axion IDE is an Avalonia 12 desktop app on .NET 10 with a clean four-layer split.
 This page is the map; every other dev page zooms into one area.
 
 ## Projects
@@ -48,6 +48,10 @@ sequenceDiagram
 | `IActivityLogService` | `SqliteActivityLogService` | Models/AC history + provider credits |
 | `IPtyTerminalService` | `ConPtyTerminalService` | Integrated PowerShell terminal |
 | `ISubAgentOrchestrator` | `SubAgentOrchestrator` | DAG planning |
+| `IExternalMarketplaceService` | `OpenVsxMarketplaceService` | External marketplace search + `.vsix` download |
+| `IExternalExtensionAnalyzer` | `ExternalExtensionAnalyzer` | Compatibility bouncer (can Axion run it?) |
+| `ExternalExtensionInstaller` | `ExternalExtensionInstaller` | Unpack + wire up + theme conversion |
+| `IBugReportService` | `BugReportService` | Pre-filled GitHub/Gitea issue builder |
 
 ## ViewModels and views
 
@@ -58,7 +62,7 @@ Code-behind only hosts click handlers that need dialogs or the terminal.
 
 ## Persistence
 
-- `axion_vault.db` — AES-256 encrypted: workspaces, tabs, conversations, per-workspace UI state (mode).
+- `axion_vault.db` — AES-256 encrypted: workspaces, tabs, conversations, per-workspace UI state (mode), and app settings (installed external extensions).
 - `activity.db` — plain SQLite: model calls, auto-continue steps, provider credits.
 
 ## ELI5 the whole thing
