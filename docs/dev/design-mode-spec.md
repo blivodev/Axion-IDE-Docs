@@ -1,8 +1,8 @@
 # Design Mode & Widget SDK (Specification)
 
-**Status: Phases 1-3 and 5 shipped in v0.18.0.** Design mode is now a working three-pane
-designer (widget palette, design tree, property inspector) with a 56-widget catalogue and
-Avalonia XAML, HTML, and React renderers. Phase 4 (the external Widget SDK) remains planned.
+**Status: shipped.** Design mode is a working three-pane designer (widget palette, design
+tree, property inspector) with a 56-widget catalogue, Avalonia XAML / HTML / React
+renderers, and the Widget SDK for custom widgets (v0.23.0).
 
 ## Goal
 

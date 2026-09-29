@@ -72,8 +72,63 @@ available in every project.
     just different ways of writing the same tree down - so you never maintain three
     copies of the same UI.
 
-## What is still planned
+## Custom widgets (Widget SDK)
 
-The **Widget SDK** (Phase 4) - a NuGet package, `dotnet new axwidget` templates, and
-schema validation for community-built widgets - is not shipped yet. See the
-[Design Mode spec](../dev/design-mode-spec.md) for the full plan.
+You can add your own building blocks to the palette without a new version of Axion.
+Write a small JSON package describing the widget, and it appears alongside the built-ins.
+
+### The package format
+
+```json
+{
+  "type": "RatingStars",
+  "displayName": "Rating Stars",
+  "category": "Custom",
+  "description": "A row of stars to score something.",
+  "author": "Your Name",
+  "version": "1.0.0",
+  "avaloniaControl": "StackPanel",
+  "htmlTag": "div",
+  "reactComponent": "Rating",
+  "properties": [
+    { "name": "Max", "type": "number", "defaultValue": "5" },
+    { "name": "Value", "type": "number", "defaultValue": "3" }
+  ]
+}
+```
+
+| Field | Meaning |
+|-------|---------|
+| `type` | The internal name used in the design tree. Letters, digits, and underscores, starting with a letter. |
+| `displayName` | The label shown in the palette. |
+| `category` | Which palette group it joins (defaults to `Custom`). |
+| `avaloniaControl` / `htmlTag` / `reactComponent` | How each renderer writes it out. Set at least one. |
+| `properties` | The settings it understands. Types: `string`, `number`, `boolean`, `enum`. |
+
+### Installing one
+
+1. Open **Design Mode** and press **Widget SDK** in the action bar.
+2. Press **Load Package…** and pick your `.axwidget` (or `.json`) file.
+3. Axion validates it and shows the result. If it is valid, press **Install**.
+4. The widget now appears in the palette - drop it on the canvas like any other.
+
+**Rescan Folder** picks up every package in the workspace's `.axion/widgets` folder, so a
+project can ship its own widgets.
+
+### Validation
+
+Axion checks a package before installing it, and explains any problem in plain English:
+
+- missing `type` or `displayName`,
+- a `type` that is not a safe name,
+- a property with an unknown type,
+- an `enum` property with no allowed values,
+- two properties with the same name,
+- a package that maps to no renderer at all.
+
+A missing *individual* renderer mapping is only a **warning** - the renderers fall back to
+a placeholder box, a `<div>`, or a `<div>` respectively.
+
+!!! tip "Reinstalling replaces"
+    Installing an updated version of the same `type` replaces the old one rather than
+    adding a duplicate.
