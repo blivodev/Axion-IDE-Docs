@@ -75,6 +75,23 @@ then a name that starts with it (shorter wins), then a match in the middle, then
 camelCase initials - so typing `gtn` finds `getTokenName`. Inserting replaces the word
 you were typing and leaves the rest of the line alone.
 
+### Outline
+
+The **Outline** tab lists what is in the file you are editing — its structs, classes, methods,
+fields, and functions — nested the way they are in the source:
+
+```
+[Struct] Point        4 lines
+  [Field] x
+  [Field] y
+[Object] impl Point   5 lines
+  [Method] sum
+[Function] main       4 lines
+```
+
+Clicking a row jumps the editor to that line. The outline refreshes automatically when you
+switch files, and there is a **Refresh** button.
+
 ### Format document (Shift+Alt+F)
 
 Asks the language server to tidy up the whole file — indentation, spacing, and line breaks —
