@@ -75,6 +75,18 @@ then a name that starts with it (shorter wins), then a match in the middle, then
 camelCase initials - so typing `gtn` finds `getTokenName`. Inserting replaces the word
 you were typing and leaves the rest of the line alone.
 
+### Signature help
+
+While you type inside a function call, a hint appears above the caret showing the
+signature and which parameter you are on:
+
+```
+fn add(a: i32, b: i32) -> i32   (parameter 1 of 2)
+```
+
+It appears when you type `(` or `,` and hides again when you type `)`, `;`, or a newline.
+If a function has several overloads, the hint follows the one you are actually in.
+
 ### Code actions (Ctrl+.)
 
 Put the caret on a problem and press **Ctrl+.** — Axion asks the language server what it
