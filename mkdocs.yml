@@ -1,0 +1,64 @@
+site_name: Axion IDE Documentation
+site_description: 'Axion IDE — AI-Native Code Editor. User Manual and Developer Wiki (ELI5).'
+site_url: https://blivodev.github.io/Axion-IDE-Docs/
+repo_url: https://github.com/blivodev/Axion-IDE-Docs
+repo_name: Axion-IDE-Docs
+copyright: blivodev
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - User Manual:
+      - Getting Started: manual/getting-started.md
+      - Workspace Modes: manual/workspace-modes.md
+      - AI Assistant: manual/ai-assistant.md
+      - DAG Pipeline: manual/dag-pipeline.md
+      - Fallback Tiers: manual/fallback-tiers.md
+      - MCP Servers: manual/mcp-servers.md
+      - Marketplace: manual/marketplace.md
+      - Developer Tools: manual/developer-tools.md
+      - Source Control: manual/source-control.md
+      - Usage Analytics: manual/usage-analytics.md
+      - Theming: manual/theming.md
+      - Activity History: manual/activity-history.md
+  - Developer Wiki:
+      - Architecture Overview: dev/architecture.md
+      - Building & Debugging: dev/building-debugging.md
+      - ELI5 Comment Convention: dev/eli5-comment-convention.md
+      - Extending the IDE: dev/extending-the-ide.md
+      - Design Mode & Widget SDK (Spec): dev/design-mode-spec.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - tables
+  - toc:
+      permalink: true
