@@ -75,6 +75,14 @@ then a name that starts with it (shorter wins), then a match in the middle, then
 camelCase initials - so typing `gtn` finds `getTokenName`. Inserting replaces the word
 you were typing and leaves the rest of the line alone.
 
+### Hover information
+
+Rest the pointer on a name and Axion asks the language server what it is, showing the
+answer as a tooltip — the type or signature plus any documentation the server has.
+
+If the cursor is on a **problem** (a squiggle), you get the problem's message instead,
+because that is more urgent than a description.
+
 ### Go to definition
 
 Put the caret on a name and press **F12** (or **Ctrl+Click** it). Axion asks the language
