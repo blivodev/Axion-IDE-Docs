@@ -73,8 +73,18 @@ you were typing and leaves the rest of the line alone.
 
 ### Go to definition
 
-Put the caret on a name and run **Go to Definition** (command palette). Axion asks the
-language server where that name is declared and opens the file at that line.
+Put the caret on a name and press **F12** (or **Ctrl+Click** it). Axion asks the language
+server where that name is declared and opens the file at that line.
+
+### Find references (Shift+F12)
+
+Put the caret on a name and press **Shift+F12**. Axion lists every place that name is
+used in the **References** tab of the diagnostics panel - including the declaration
+itself. **Click a row** to jump straight to it.
+
+!!! tip "The three editor gestures"
+    **Ctrl+Space** completes, **F12** goes to the definition, **Shift+F12** finds
+    references. All three need a language server running for the file type.
 
 !!! note "Servers are optional"
     Axion never bundles a language server. If one is missing, the Problems tab simply
