@@ -134,9 +134,54 @@ and **Clear Results** empties the list.
     Axion never bundles a test framework. If none is detected, the view says so and
     suggests adding a project file - nothing breaks.
 
+## Dev containers
+
+A **dev container** is a box with all the tools your project needs already installed, so
+you do not have to set them up on your own machine. Axion reads your project's
+`devcontainer.json` and can build, start, stop, and run commands inside it.
+
+### Requirements
+
+Axion checks for **Docker** or **Podman** - and it checks both that the command exists
+*and* that the engine is actually running (Docker Desktop can be installed but stopped).
+The Dev Containers view shows each runtime's status.
+
+### The Dev Containers view
+
+Open **Dev Containers** in the icon rail. It shows:
+
+- **Container runtimes** - Docker and Podman with a status dot (green ready, amber
+  installed-but-stopped, grey not installed).
+- **Container spec** - what your `devcontainer.json` asks for: the image or Dockerfile,
+  the workspace folder, and the forwarded ports.
+- **Build & run log** - a live log while the container builds and starts.
+- **Run in Container** - type a command (e.g. `dotnet test`) and run it inside the box.
+
+### What Axion reads
+
+| Field | Supported |
+|-------|-----------|
+| `image` | ? |
+| `build` | ? both the plain-string and `{ "dockerfile": … }` forms |
+| `workspaceFolder` | ? |
+| `forwardPorts` | ? plain numbers and `"host:container"` strings |
+| `containerEnv` | ? |
+| `features` | ? listed |
+| `postCreateCommand` | ? run after the container starts |
+
+!!! tip "Comments are allowed"
+    `devcontainer.json` permits `//` and `/* */` comments. Axion strips them before
+    parsing, so a commented config works fine.
+
+!!! note "Containers are optional"
+    Axion never bundles a container runtime. If none is running, the view says so and
+    suggests starting Docker Desktop - nothing breaks.
+
 ## Planned
 
-- Docker dev-environments: run toolchains inside containers.
+Nothing outstanding in this area - the LSP client, debugger, test runner, and dev
+containers have all shipped. See the [Design Mode spec](../dev/design-mode-spec.md)
+for the remaining Widget SDK work.
 
 The editor core is AvaloniaEdit with an option to adopt an embedded web editor
 later (changeable in Settings) - the LSP/DAP layers are editor-agnostic by design.
