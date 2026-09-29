@@ -62,4 +62,8 @@ card collapses to `Answered: …` or `Question skipped.`
   the composer's **Skills & Agents** flyout.
 - **Re-enable** — install it again from the Marketplace; it is a first-party item, so
   it stays in the catalog.
-- **Planned** — StarVault app/MCP integration.
+- **StarVault** - the zero-knowledge credential vault, connected over MCP. The agent can
+  search entries, retrieve secrets and TOTP codes, generate passwords, API keys,
+  certificates and keypairs, run crypto tools, and audit vault health - all without you
+  pasting anything. The vault stays **locked** until you unlock it with your master
+  password.
