@@ -23,7 +23,7 @@ The flat button in the top bar cycles the workspace between:
 
 1. **ASSISTANT** — chat-first. The AI Assistant tab is permanent.
 2. **DEVELOPER** — assistant closed, editor front and center.
-3. **DESIGN** — visual UI builder (planned; see the [Design Mode spec](../dev/design-mode-spec.md)).
+3. **DESIGN** — visual UI builder (planned; see the [Design Mode spec](dev/design-mode-spec.md)).
 
 The selected mode is saved **per workspace** and restored when you reopen it.
 

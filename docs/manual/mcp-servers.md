@@ -5,10 +5,10 @@ Axion connects to **Model Context Protocol** servers so agents can use external 
 
 ## Marketplace (one-click installs)
 
-The MCP view starts with the **Marketplace**: a curated catalog of 20 servers
-including `filesystem`, `git`, `github`, `postgres`, `sqlite`, `puppeteer`, `memory`,
-`sequential-thinking`, `fetch`, `brave-search`, `docker`, `kubernetes`, `sentry`,
-`slack`, `google-drive`, `notion`, and the desktop/remote bridges:
+The MCP view starts with the **Marketplace**: a curated catalog of 18 servers
+including `git`, `github`, `postgres`, `docker`, `kubernetes`, `sentry`, `slack`,
+`google-drive`, `notion`, the capability servers `screen-recorder`, `qemu`,
+`virtualbox`, `wsl2`, `audio-capture`, and the desktop/remote bridges:
 
 | Server | What it adds |
 |--------|--------------|
@@ -20,6 +20,17 @@ including `filesystem`, `git`, `github`, `postgres`, `sqlite`, `puppeteer`, `mem
 1. Search or browse the catalog.
 2. Click **⚡ Install** — the server appears as CONNECTED in the hub. No connection
    strings needed.
+
+## Default toolkit (Axion Agent)
+
+These servers ship **connected by default** so the [Axion Agent](axion-agent.md)
+works out of the box:
+
+`memory` · `sequential-thinking` · `filesystem` · `sqlite` · `fetch` ·
+`brave-search` · `puppeteer`
+
+They are ordinary hub cards — disconnect or remove them any time, and reinstall from
+the Marketplace or by GitHub URL.
 
 ## Install from GitHub
 

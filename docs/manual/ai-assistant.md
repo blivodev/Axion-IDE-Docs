@@ -37,6 +37,25 @@ diagnostics panel) shows:
   red failed
 - A progress line like `3 / 7 steps complete`
 
+## Asking you questions (question cards)
+
+When the agent needs a decision from you, it can ask right in the chat. Its reply
+ends with a question card:
+
+- **Numbered options** — each with a short description; the agent marks the one it
+  **recommends**
+- **Free-text box** — type your own answer instead
+- **Skip** — dismiss the question
+
+Click an option (or send typed text) and the conversation continues immediately; the
+card collapses to `Answered: …` or `Question skipped.`
+
+## The Axion Agent
+
+The default agent driving all of this is **Axion Agent** — see
+[Axion Agent](axion-agent.md) for its full capability set, default MCP toolkit, and
+how to uninstall it.
+
 ## Message history
 
 Every conversation is stored in the encrypted vault. Open **History** in the icon

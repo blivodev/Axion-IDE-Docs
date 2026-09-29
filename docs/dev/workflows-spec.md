@@ -1,7 +1,9 @@
 # Workflows (Specification)
 
-**Status: groundwork shipped** (model, JSON persistence, node-style step editor).
-Full visual canvas and execution wiring land in a future release.
+**Status: execution wiring shipped** — the armed workflow's step chain is injected
+into DAG pipeline tasks and auto-continue steps (v0.14.0+), with list selection
+(v0.14.1) and role tags (v0.15.1). The freeform node canvas and marketplace sharing
+are still ahead.
 
 ## Goal
 
@@ -31,19 +33,26 @@ composer.
 - Stored as `*.workflow.json` in `<workspace>/.axion/workflows/` (workspace scope)
   and `%AppData%/AxionIDE/workflows/` (global library). Workspace wins by name.
 
-## Shipped in the groundwork
+## Shipped so far
 
 - **Workflows view** (sidebar): workflow list (new / delete / reload) + a
   **node-style vertical step editor** — every step is a node card with a connector
   arrow, editable Title, Tool/binary/model, Directive, Linked skill, and Linked
-  DAG role (which carries its assigned model).
+  DAG role.
 - JSON save/load, add/remove/move steps, per-workspace + global libraries.
+- **Arm for next run** (v0.14.0): the armed workflow's ordered steps, tools, skills,
+  and role tags are injected into **every DAG task system prompt** and **every
+  auto-continue step**; arming/disarming and DAG injection are logged.
+- **Selection & highlights** (v0.14.1): click between saved workflows; the open one is
+  highlighted, and the UI state never leaks into the shared JSON.
+- **Role tags** (v0.15.1): a step's Linked DAG role is emitted as `[run as: …]` in the
+  directive; `Inherit from Auto Router` stays untagged.
 
 ## Execution phases
 
-1. **Phase 1 — execution wiring**: when a DAG/Auto-Continue run starts with a
-   workflow selected, inject each step's directive into the system prompt in order
-   and honor the step's tool/model.
+1. ~~**Phase 1 — execution wiring**~~ **Shipped** (v0.14.0–v0.15.1): the armed
+   workflow's steps are injected into DAG/Auto-Continue runs, carrying their tool,
+   skill, and role tags.
 2. **Phase 2 — node canvas**: freeform multi-branch graph (conditions, parallel
    branches) beyond the linear chain.
 3. **Phase 3 — marketplace sharing** of workflows.
@@ -51,6 +60,6 @@ composer.
 ## Links to other features
 
 - **Auto-Continue**: a workflow can drive what each continuation does.
-- **DAG roles**: `LinkedRole` reuses the per-mode model assignment.
+- **DAG roles**: `LinkedRole` tags the step with the role that should own it (`[run as: …]`).
 - **Skills**: `LinkedSkill` activates a marketplace skill for the step.
 - **Tools**: `Tool` names binaries from the Tools marketplace.
