@@ -75,6 +75,15 @@ then a name that starts with it (shorter wins), then a match in the middle, then
 camelCase initials - so typing `gtn` finds `getTokenName`. Inserting replaces the word
 you were typing and leaves the rest of the line alone.
 
+### Rename symbol (F2)
+
+Put the caret on a name and press **F2**. Type the new name and press **Preview** — Axion
+asks the language server for a rename plan and shows **every file and every change** it
+would make. Nothing is written until you press **Apply**.
+
+A rename rewrites real code, so the preview exists to let you check it first. Open editor
+tabs reload after a rename, so you see the new name straight away.
+
 ### Hover information
 
 Rest the pointer on a name and Axion asks the language server what it is, showing the
