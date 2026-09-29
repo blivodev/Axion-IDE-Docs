@@ -75,6 +75,12 @@ then a name that starts with it (shorter wins), then a match in the middle, then
 camelCase initials - so typing `gtn` finds `getTokenName`. Inserting replaces the word
 you were typing and leaves the rest of the line alone.
 
+### Format document (Shift+Alt+F)
+
+Asks the language server to tidy up the whole file — indentation, spacing, and line breaks —
+and writes the result. A status line tells you what happened: how many edits were applied,
+`Already formatted — nothing to change`, or `No formatter available for this file type`.
+
 ### Signature help
 
 While you type inside a function call, a hint appears above the caret showing the
