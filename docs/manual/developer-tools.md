@@ -75,6 +75,19 @@ then a name that starts with it (shorter wins), then a match in the middle, then
 camelCase initials - so typing `gtn` finds `getTokenName`. Inserting replaces the word
 you were typing and leaves the rest of the line alone.
 
+### Workspace symbols (Ctrl+T)
+
+The **Symbols** tab searches the whole project for a symbol. Type part of a name and see every
+matching function, class, or method — including ones in files you have never opened:
+
+```
+[Function] add      math.rs:1
+[Function] add_all  math.rs:5
+```
+
+Clicking a row opens that file at that line. Results are ranked so an exact name match comes
+first, then names starting with what you typed, then the rest.
+
 ### Outline
 
 The **Outline** tab lists what is in the file you are editing — its structs, classes, methods,
