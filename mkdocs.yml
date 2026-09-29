@@ -32,6 +32,7 @@ nav:
   - User Manual:
       - Getting Started: manual/getting-started.md
       - Workspace Modes: manual/workspace-modes.md
+      - Design Mode: manual/design-mode.md
       - AI Assistant: manual/ai-assistant.md
       - Axion Agent: manual/axion-agent.md
       - DAG Pipeline: manual/dag-pipeline.md
