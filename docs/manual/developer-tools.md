@@ -162,7 +162,7 @@ Open **Dev Containers** in the icon rail. It shows:
 | Field | Supported |
 |-------|-----------|
 | `image` | ? |
-| `build` | ? both the plain-string and `{ "dockerfile": … }` forms |
+| `build` | ? both the plain-string and `{ "dockerfile": â†’ }` forms |
 | `workspaceFolder` | ? |
 | `forwardPorts` | ? plain numbers and `"host:container"` strings |
 | `containerEnv` | ? |
