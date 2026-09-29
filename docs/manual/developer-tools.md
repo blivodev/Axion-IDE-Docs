@@ -75,6 +75,21 @@ then a name that starts with it (shorter wins), then a match in the middle, then
 camelCase initials - so typing `gtn` finds `getTokenName`. Inserting replaces the word
 you were typing and leaves the rest of the line alone.
 
+### Folding ranges
+
+The **Folding** tab lists every block the language server says can be collapsed — function
+bodies, `if` blocks, comment runs — with how many lines each one hides:
+
+```
+[comment] lines 1-2   0 hidden
+[block]   lines 4-7   2 hidden
+[block]   lines 9-13  3 hidden
+[block]   lines 10-12 1 hidden
+```
+
+Click a block to fold or unfold it, or use **Collapse All** / **Expand All**. Folded lines are
+hidden in the editor; the start line stays visible so you can see where the block begins.
+
 ### Workspace symbols (Ctrl+T)
 
 The **Symbols** tab searches the whole project for a symbol. Type part of a name and see every
