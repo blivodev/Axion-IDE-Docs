@@ -55,6 +55,22 @@ Below the list is a **language server status strip** showing each server and whe
 is running. A server that is not installed says so plainly rather than pretending your
 code is clean.
 
+### Completion (Ctrl+Space)
+
+Put the caret where you want to type and press **Ctrl+Space**. Axion asks the language
+server for suggestions and shows them in a popup:
+
+- each row shows the suggestion's **kind** (Method, Class, Property, and so on) and its
+  detail,
+- **Up / Down** move the highlight,
+- **Enter** or **Tab** inserts the highlighted suggestion,
+- **Esc** closes the popup, and double-clicking a row also inserts it.
+
+Suggestions are ranked against the word you have already typed: an exact match first,
+then a name that starts with it (shorter wins), then a match in the middle, then
+camelCase initials - so typing `gtn` finds `getTokenName`. Inserting replaces the word
+you were typing and leaves the rest of the line alone.
+
 ### Go to definition
 
 Put the caret on a name and run **Go to Definition** (command palette). Axion asks the
