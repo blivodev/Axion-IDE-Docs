@@ -99,10 +99,44 @@ Three panes sit below it:
     Axion never bundles a debug adapter. If one is missing, the Debug view says so and
     shows the install hint - nothing breaks.
 
+## Test runner
+
+Axion detects your project's test framework and runs the tests, showing a tidy
+pass/fail list instead of raw console noise.
+
+| Framework | Command | Detected by |
+|-----------|---------|-------------|
+| **.NET** | `dotnet test` | `*.csproj`, `*.sln`, `*.slnx` |
+| **pytest** | `python -m pytest -v` | `pytest.ini`, `pyproject.toml`, `tox.ini`, `test_*.py` |
+| **Go** | `go test -v ./...` | `go.mod` |
+| **Rust** | `cargo test` | `Cargo.toml` |
+| **npm** | `npm test` | `package.json` |
+
+### The Tests view
+
+Open **Test Runner** in the icon rail. The header shows the detected framework and a
+colour-coded scoreboard - **green** when everything passes, **red** when something
+fails - with the run duration.
+
+Press **Run Tests** and results stream in **live**, one row per test:
+
+- a coloured status chip (**P** green pass, **F** red fail, **S** grey skip),
+- the test's full name (`Suite.TestName`),
+- the file it lives in, and
+- how long it took.
+
+**Click a failed test** to jump straight to its file.
+
+**Detect Framework** re-scans the workspace (useful after adding a new test project),
+and **Clear Results** empties the list.
+
+!!! note "Frameworks are optional"
+    Axion never bundles a test framework. If none is detected, the view says so and
+    suggests adding a project file - nothing breaks.
+
 ## Planned
 
 - Docker dev-environments: run toolchains inside containers.
-- Test runner integration.
 
 The editor core is AvaloniaEdit with an option to adopt an embedded web editor
 later (changeable in Settings) - the LSP/DAP layers are editor-agnostic by design.
