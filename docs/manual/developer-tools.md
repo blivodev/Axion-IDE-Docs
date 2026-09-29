@@ -64,9 +64,43 @@ language server where that name is declared and opens the file at that line.
     Axion never bundles a language server. If one is missing, the Problems tab simply
     stays empty and the status strip shows the install hint - nothing breaks.
 
+## Debugger (DAP)
+
+Axion debugs your program through a real **debug adapter** - the same protocol VS Code
+uses. Set a breakpoint, run, and inspect the call stack and variables.
+
+| Language | Adapter | Install |
+|----------|---------|---------|
+| Python | debugpy | `pip install debugpy` |
+| C# | netcoredbg | github.com/Samsung/netcoredbg |
+| Go | Delve | `go install github.com/go-delve/delve/cmd/dlv@latest` |
+| Node.js | node | nodejs.org |
+| Rust | lldb-dap | Install LLVM / CodeLLDB |
+
+### The Debug view
+
+Open **Debugger** in the icon rail. The toolbar has **Debug**, **Continue**,
+**Step Over / Into / Out**, **Pause**, **Toggle Breakpoint**, and **Stop**.
+
+Three panes sit below it:
+
+- **Breakpoints** - every breakpoint you have placed, with a red dot when on and grey
+  when off. **Toggle Breakpoint** adds or removes one on the caret line.
+- **Call stack** - the "how did we get here?" trail while paused. **Click a frame** to
+  see the variables in that function.
+- **Variables** - the values in the selected frame, grouped by scope (Locals, Globals),
+  with a **debug console** underneath for adapter output.
+
+!!! tip "Save before you debug"
+    The debugger reads your file from disk, so Axion saves any unsaved changes in the
+    active tab before starting a session.
+
+!!! note "Adapters are optional"
+    Axion never bundles a debug adapter. If one is missing, the Debug view says so and
+    shows the install hint - nothing breaks.
+
 ## Planned
 
-- DAP debugging UI (breakpoints, watch, step) driving netcoredbg / debugpy / dlv.
 - Docker dev-environments: run toolchains inside containers.
 - Test runner integration.
 
