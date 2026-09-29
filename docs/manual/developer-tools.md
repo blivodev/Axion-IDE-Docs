@@ -75,6 +75,16 @@ then a name that starts with it (shorter wins), then a match in the middle, then
 camelCase initials - so typing `gtn` finds `getTokenName`. Inserting replaces the word
 you were typing and leaves the rest of the line alone.
 
+### Code actions (Ctrl+.)
+
+Put the caret on a problem and press **Ctrl+.** — Axion asks the language server what it
+can do and lists the fixes it offers: *add the missing import*, *remove the unused
+variable*, *insert the explicit type*. Each row shows whether it is a **Quick fix**, a
+**Refactor**, or a **Source action**, and the server's preferred one is marked.
+
+**Click a fix to apply it.** Open editor tabs reload afterwards, so you see the change
+straight away.
+
 ### Rename symbol (F2)
 
 Put the caret on a name and press **F2**. Type the new name and press **Preview** — Axion
