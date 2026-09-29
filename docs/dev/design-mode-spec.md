@@ -51,12 +51,13 @@ flowchart TB
 
 ## Execution phases
 
-1. **Phase 1 — Avalonia canvas**: drag-drop, selection, property inspector, live XAML preview.
-2. **Phase 2 — Library**: `.axwidget` read/write, global + workspace libraries.
-3. **Phase 3 — HTML/CSS + React** renderers.
-4. **Phase 4 — SDK** + community widgets.
-5. **Phase 5 — Agent linkage** end-to-end.
+All five phases have shipped.
 
+1. **Phase 1 - Avalonia canvas**: drag-drop, selection, property inspector, live XAML preview. **Shipped** (v0.18.0, drag-drop in v0.24.0).
+2. **Phase 2 - Library**: `.axwidget` read/write, global + workspace libraries. **Shipped** (v0.18.0).
+3. **Phase 3 - HTML/CSS + React** renderers. **Shipped** (v0.18.0).
+4. **Phase 4 - SDK** + community widgets. **Shipped** (v0.23.0).
+5. **Phase 5 - Agent linkage** end-to-end. **Shipped** (v0.18.0).
 ## Non-goals
 
 - No pixel-perfect bidirectional import of arbitrary existing XAML (export is

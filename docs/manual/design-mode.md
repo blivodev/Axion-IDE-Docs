@@ -19,13 +19,24 @@ ASSISTANT → DEVELOPER → DESIGN). The mode is remembered per workspace.
 
 ## Adding and arranging widgets
 
-1. Click a widget in the palette (e.g. **Button**).
-2. It lands **inside** the selected widget when that widget can hold children (like a
-   Card or Stack Panel); otherwise it is added **next to** it.
-3. Select a widget in the tree to edit it, or click **Delete Widget** to remove it.
+There are two ways to add a widget:
 
-The root widget can never be deleted - a design always needs a top box.
+1. **Drag it from the palette onto the canvas.** Dropping on a container (a Card, Stack
+   Panel, or Grid) puts the widget **inside** it. Dropping on a leaf (a Button, some Text)
+   puts it **beside** it. Dropping on empty space puts it at the top level.
+2. **Click it in the palette.** It lands inside the selected widget when that widget can
+   hold children, otherwise beside it.
 
+### The canvas
+
+The canvas draws your design as **nested boxes**, each showing the widget's name, its
+type, and a preview of its text. The **selected** box has a cyan outline; the box under
+your pointer gets an amber one as a drop target.
+
+**Click any box** to select it - the design tree and property inspector follow.
+
+The root widget can never be deleted or moved, because a design always needs a top box.
+A widget can never be dropped inside itself or inside one of its own children.
 ## The widget library
 
 **56 widgets** ship across seven categories:
