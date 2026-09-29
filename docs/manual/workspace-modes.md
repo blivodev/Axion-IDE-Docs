@@ -35,12 +35,11 @@ Coding-focused. Switching closes the AI Assistant completely:
 
 Switch back by clicking the mode button until it reads **ASSISTANT**.
 
-## DESIGN (planned)
+## DESIGN
 
-The visual UI builder. It currently shows a roadmap placeholder and a preview of the
-planned **56-widget library** while the full builder is developed — see the
-[Design Mode & Widget SDK spec](../dev/design-mode-spec.md).
-
+The visual UI builder. Drop widgets from the palette, arrange them in the design tree,
+edit their settings in the property inspector, and export the result as Avalonia XAML,
+HTML, or React. See [Design Mode](design-mode.md) for the full guide.
 ## Sidebars in every mode
 
 The left icon rail and the right sidebar (Project Explorer + diagnostics tabs) are
