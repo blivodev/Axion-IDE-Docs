@@ -51,6 +51,10 @@ panel, with a colour-coded severity chip (red error, amber warning, blue info, g
 hint), the `file:line` location, the message, and which server said it. **Click a row
 to jump straight to that line.**
 
+The same problems are also **underlined in the editor itself** — red for errors, amber
+for warnings, blue for information. **Hover a squiggle** to see the message and which
+server reported it.
+
 Below the list is a **language server status strip** showing each server and whether it
 is running. A server that is not installed says so plainly rather than pretending your
 code is clean.
