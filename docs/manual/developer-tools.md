@@ -5,26 +5,47 @@ view (wrench icon) handles detection and installation.
 
 ## Detection
 
-Opening the Tools view walks your PATH and asks each known toolchain for its
-version: **.NET, Node.js, Python, Go, Rust/Cargo, JDK, Dart, Ruby, GCC, Git**.
+Opening the Tools view walks your PATH and asks each known toolchain for its version —
+**76 of them**, covering languages, build systems, debuggers, cloud CLIs, and utilities.
 
 - Green dot = ready, with the version string.
 - Gray dot = not found.
 
-Click **⟳ Re-detect** any time (e.g. after installing something new).
+Click **Re-detect** any time (e.g. after installing something new).
+
+### Repair PATH
+
+If a tool you just installed still shows as "not found", or `winget` is "not recognised" in
+the integrated terminal, click **Repair PATH**.
+
+This re-reads PATH from the Windows registry and pushes it into the running terminal. It is
+needed because a desktop app inherits the environment it was launched with, which can predate
+a PATH change — so a tool installed after Axion started is invisible until PATH is refreshed.
+The status line reports how many entries were read and whether the WindowsApps folder (which
+holds `winget`) is present.
 
 ## Installing tools
 
-The **Tools Marketplace** lists open-source compilers, SDKs, and debug adapters
-with one-click installs:
+The **Tools Marketplace** lists open-source compilers, SDKs, and debug adapters with
+one-click installs — **76 entries** across these groups:
 
-- .NET SDK 10, Node.js LTS, Python 3.12, Go, Rustup, JDK 21, Dart SDK,
-  Ruby + DevKit, WinLibs GCC, Git, Docker Desktop
-- Debug adapters: **debugpy** (Python DAP), **Delve** (Go DAP)
-- Utilities: ripgrep
+- **Languages & runtimes** — .NET SDK 10, Node.js LTS, Python 3.12, Go, Rustup, JDK 21,
+  Dart SDK, Ruby + DevKit, PHP, Kotlin, Swift, Perl, Lua, R, Julia, Deno, Bun, pnpm, Yarn
+- **Compilers & build systems** — WinLibs GCC, LLVM/Clang, MSYS2, Zig, CMake, Ninja, Make,
+  NASM, Yasm, GNU Binutils, Visual Studio Build Tools, Windows SDK
+- **Debuggers & diagnostics** — GDB, LLDB, WinDbg, Sysinternals Suite, Process Monitor,
+  debugpy (Python DAP), Delve (Go DAP)
+- **Graphics & GPU** — DirectX Shader Compiler, Vulkan SDK, CUDA Toolkit, OpenCL Headers
+- **Cloud & DevOps** — Docker Desktop, Podman, kubectl, Helm, Terraform, AWS CLI,
+  Azure CLI, gcloud CLI
+- **Databases** — PostgreSQL, SQLite, Redis
+- **Networking** — Wireshark, Nmap, curl, wget, OpenSSH, PuTTY, MobaXterm, WinSCP
+- **Storage & data** — rclone, Azure Storage Explorer, MinIO, DVC, MLflow, Ollama
+- **Media & docs** — FFmpeg, ImageMagick, Pandoc, Mermaid CLI, Doxygen, Sphinx, MkDocs
+- **Utilities** — ripgrep, jq, fd, bat, fzf, 7-Zip, Windows Terminal, PowerShell 7
 
-Clicking **⬇ Install** runs the command (usually `winget install ...`) **in the
-integrated terminal**, so you see every step. Nothing silent, nothing hidden.
+Clicking **Install** runs the command (usually `winget install ...`) **in the integrated
+terminal**, so you see every step. Nothing silent, nothing hidden.
 
 ## Language servers (LSP)
 
@@ -180,22 +201,69 @@ itself. **Click a row** to jump straight to it.
     **Ctrl+Space** completes, **F12** goes to the definition, **Shift+F12** finds
     references. All three need a language server running for the file type.
 
+### Call hierarchy (Ctrl+Alt+H)
+
+Put the caret on a function name and press **Ctrl+Alt+H**. The **Calls** tab shows two lists:
+
+- **CALLED BY** — the functions that call this one
+- **CALLS** — the functions this one calls
+
+Each row says which line makes the call, and clicking it opens that file at that line. This
+answers "if I change this, what breaks?" and "what does this actually do?" without you having
+to search by hand.
+
+### Inlay hints
+
+The language server's inferred types are drawn inline as muted italic labels, so
+`let x = 42;` shows `: i32` without you having to hover over it.
+
+They are **off by default**, because they add visual noise and most people only want them
+occasionally. Toggle them from the Hints panel.
+
+### Semantic tokens
+
+The language server tells the editor which words are variables, which are types, and which
+are functions, and the editor colours them accordingly. This is more accurate than matching
+text patterns, because the server actually understands the language — it can tell a type
+named `Point` from a variable named `Point`.
+
+This runs automatically when a file is open.
+
+### Selection ranges (Alt+Up / Alt+Down)
+
+Put the caret in some code and press **Alt+Up**: the selection grows outward one step at a
+time — the caret, then the word, then the expression, then the statement, then the enclosing
+block, then the whole function. **Alt+Down** steps back down.
+
+This is the standard expand/shrink pair, and it is much faster than dragging to select a
+whole block by hand.
+
 !!! note "Servers are optional"
     Axion never bundles a language server. If one is missing, the Problems tab simply
     stays empty and the status strip shows the install hint - nothing breaks.
 
 ## Debugger (DAP)
 
-Axion debugs your program through a real **debug adapter** - the same protocol VS Code
+Axion debugs your program through a real **debug adapter** — the same protocol VS Code
 uses. Set a breakpoint, run, and inspect the call stack and variables.
 
-| Language | Adapter | Install |
-|----------|---------|---------|
-| Python | debugpy | `pip install debugpy` |
-| C# | netcoredbg | github.com/Samsung/netcoredbg |
-| Go | Delve | `go install github.com/go-delve/delve/cmd/dlv@latest` |
-| Node.js | node | nodejs.org |
-| Rust | lldb-dap | Install LLVM / CodeLLDB |
+There are **46 adapters**, covering these languages and runtimes:
+
+| Group | Languages |
+|-------|-----------|
+| **Mainstream** | Python (debugpy), C# (netcoredbg), Go (Delve), Node.js, Rust (CodeLLDB / GDB) |
+| **JVM** | Java (JDI), Kotlin (JDI), Scala |
+| **Native** | C / C++ (GDB or LLDB), Zig, Assembly, Fortran, Swift (LLDB) |
+| **Scripting** | Ruby (rdbg), PHP (Xdebug), Perl, Lua, R, Julia, MATLAB, Wolfram |
+| **Web & mobile** | TypeScript (ts-node), Deno, Bun, Vue, Svelte, React Native, Electron, Tauri |
+| **Game & 3D** | Unity, Godot (GDScript), Blender (Python) |
+| **Functional** | Haskell, Elixir, Erlang, Clojure |
+| **Shell & config** | PowerShell, Bash |
+| **Infrastructure** | SQL (sqlite), Terraform, Ansible, Docker Compose, Kubernetes |
+
+Each adapter names the file extensions it handles, so Axion picks the right one from the file
+you have open. If the adapter's program is not installed, the view shows the install hint
+instead of pretending debugging works.
 
 ### The Debug view
 

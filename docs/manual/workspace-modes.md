@@ -42,6 +42,38 @@ edit their settings in the property inspector, and export the result as Avalonia
 HTML, or React. See [Design Mode](design-mode.md) for the full guide.
 ## Sidebars in every mode
 
-The left icon rail and the right sidebar (Project Explorer + diagnostics tabs) are
-available in **all** modes — modes change the center area and the assistant, never
-the sidebars.
+The left navigation strip and the right sidebar (Project Explorer + diagnostics tabs) are
+available in **all** modes — modes change the center area and the assistant, never the
+sidebars.
+
+### The navigation strip
+
+The left strip is grouped and labelled, so related tools sit together:
+
+| Group | Entries |
+|-------|---------|
+| **WORK** | Create, Context, Search |
+| **AI** | Agents, Routing, Activity |
+| **BUILD** | Tools, Run, Containers, Workflows |
+| **EXTEND** | Extensions |
+| **REPO** | Git |
+| *(pinned)* | Settings, Profile, Collapse |
+
+Entries that own more than one page are **split buttons**: the icon opens the main page, and
+a caret on the right opens a menu of the others.
+
+| Entry | Opens | Caret menu |
+|-------|-------|------------|
+| **Create** | Editor + AI chat | Session History |
+| **Routing** | Cloud fallback rules | Auto-Continue Loop |
+| **Activity** | Usage analytics | System Logs, Session History |
+| **Run** | Debugger | Test Runner |
+| **Extensions** | Marketplace | MCP Servers |
+
+### Collapsing the strip
+
+Click **Collapse** at the bottom of the strip to shrink it from the labelled layout (150px)
+to icons only (54px) — handy on a narrow screen. The group headers hide too, since they would
+be unreadable at that width.
+
+The choice is **remembered per workspace**, so it survives a restart.

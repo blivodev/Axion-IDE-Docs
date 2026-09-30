@@ -5,20 +5,27 @@ Axion connects to **Model Context Protocol** servers so agents can use external 
 
 ## Marketplace (one-click installs)
 
-The MCP view starts with the **Marketplace**: a curated catalog of 18 servers
-including `git`, `github`, `postgres`, `docker`, `kubernetes`, `sentry`, `slack`,
-`google-drive`, `notion`, the capability servers `screen-recorder`, `qemu`,
-`virtualbox`, `wsl2`, `audio-capture`, and the desktop/remote bridges:
+The MCP view starts with the **Marketplace**: a curated catalog of **400+ servers**. Search
+it by name, category, or capability, or browse by category.
 
-| Server | What it adds |
-|--------|--------------|
-| `windows-mcp` | Screenshots, input automation, window management, shell |
-| `macos-mcp` | AppleScript automation and macOS equivalents |
-| `linux-desktop-mcp` | X11/Wayland screenshots and xdotool input |
-| `remote-session` | HTTP/SSE bridge for remote agents |
+| Category | Examples |
+|----------|----------|
+| **Official** | `filesystem`, `memory`, `sequential-thinking`, `fetch`, `time`, `everything`, `git`, `github`, `gitlab`, `slack`, `google-drive`, `notion` |
+| **Desktop** | `windows-mcp`, `macos-mcp`, `linux-desktop-mcp`, `wsl2`, `remote-session` |
+| **Data** | `postgres`, `sqlite`, `mysql`, `redis`, `mongodb`, `elasticsearch`, `snowflake`, `bigquery`, `clickhouse`, `duckdb`, `neo4j`, `supabase`, `airtable`, `google-sheets` |
+| **Cloud** | `aws`, `azure`, `gcloud`, `cloudflare`, `firebase`, `vercel`, `netlify`, `railway`, `fly-io`, `digitalocean` |
+| **DevOps** | `docker`, `docker-hub`, `kubernetes`, `helm`, `terraform`, `podman`, `npm-registry`, `nuget`, `pypi` |
+| **Observability** | `sentry`, `grafana`, `prometheus` |
+| **Quality & Security** | `sonarqube`, `snyk`, `trivy`, `starvault` |
+| **Productivity** | `linear`, `jira`, `confluence`, `asana`, `trello`, `monday`, `obsidian` |
+| **Commerce & CRM** | `stripe`, `shopify`, `hubspot`, `salesforce`, `zendesk` |
+| **Search & Browser** | `brave-search`, `exa-search`, `puppeteer`, `playwright`, `google-maps` |
+| **Documents & Media** | `pdf-reader`, `office-docs`, `image-tools`, `youtube-transcript`, `screen-recorder`, `audio-capture` |
+| **Virtualization** | `qemu`, `virtualbox` |
+| **AI** | `huggingface`, `openapi-bridge` |
 
 1. Search or browse the catalog.
-2. Click **⚡ Install** — the server appears as CONNECTED in the hub. No connection
+2. Click **Install** — the server appears as CONNECTED in the hub. No connection
    strings needed.
 
 ## Default toolkit (Axion Agent)

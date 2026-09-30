@@ -6,13 +6,17 @@ open source.
 
 ## Categories
 
-| Category | Examples |
-|----------|----------|
-| **Skills** | TDD Specialist, Refactoring, API Design, SQL Optimization, Regex Wizard, Accessibility Audit, Git Workflow, Docs Writer |
-| **Autonomous Agents** | **Axion Agent** (default — installed), Claude (Anthropic), Antigravity (Google), Codex (OpenAI), OpenHands, Aider, SWE-Agent, Code Review agent |
-| **Compactors** | Repomix, Code2Prompt, Universal Ctags, Gitingest |
-| **MCP Servers** | Blender, Chrome DevTools, GitHub bridges |
-| **Plugins** | Media Converter (ffmpeg), Cryptography Toolkit, Image Compressor, JSON Schema Generator, .env Manager, Cron Scheduler, Markdown Exporter |
+The catalog is large — roughly 190 entries across five categories. The table below shows the
+count and a representative sample of each; use the filter buttons at the top of the
+Marketplace to browse a category in full.
+
+| Category | Count | Examples |
+|----------|-------|----------|
+| **Skills** | 58 | TDD Specialist, Refactoring, API Design, SQL Optimization, Regex Wizard, Accessibility Audit, Git Workflow, Docs Writer, Domain-Driven Design, CQRS & Event Sourcing, GraphQL Schema, gRPC & Protobuf, OAuth & OIDC, Cryptography Review, Threat Modelling, OWASP Top 10, Load Testing, Chaos Engineering, Contract Testing, Property-Based Testing, Mutation Testing, Snapshot Testing, End-to-End Browser Testing, Accessibility Testing, Observability Design, SLO & Error Budget, Incident Response, Runbook Authoring, Cloud Cost Optimisation, Data Modelling, ETL & Data Pipeline, Event Streaming, Caching Strategy, Concurrency & Locking, Memory Profiling, API Versioning, Feature Flag, Monorepo Tooling, Docs-as-Code, Architecture Decision Records, Code Review, Legacy Code Rescue, Dependency Audit |
+| **Autonomous Agents** | 49 | **Axion Agent** (default — installed), Claude (Anthropic), Antigravity (Google), Codex (OpenAI), Gemini (Google), DeepSeek Coder, Qwen Coder, OpenHands, Aider, SWE-Agent, Code Review, Legacy Migration, Performance Optimisation, Security Remediation, Documentation, API Reference, Test Gap, Flaky Test Hunter, Dead Code Removal, Dependency Upgrade, CVE Triage, Localisation, Accessibility Remediation, Database Schema, Query Optimisation, Infrastructure, Kubernetes, CI Pipeline, Release, Changelog, Pull Request Review, Issue Triage, Bug Reproduction, Codebase Onboarding, Architecture Review, Cloud Cost, Log Analysis, Postmortem, Compliance, SBOM, Refactoring, Docstring |
+| **Compactors** | 34 | Repomix, Code2Prompt, Universal Ctags, Gitingest, Tree-sitter AST, Signature-Only, Diff-Only, Import Graph, Call Graph, Semantic Chunk, Embedding Rank, BM25 Keyword, Hybrid Retrieval, Cross-Encoder Rerank, Recursive Summariser, Hierarchical Summary, Rolling Window, Near-Duplicate, Whitespace Minifier, Comment Stripper, Test-Aware, Config, Schema, OpenAPI, Log, Stack Trace, Dependency List, Git History, Blame, Docs, Notebook, Binary Asset, Token Budget, Prompt Cache |
+| **MCP Servers** | 3 | Blender, Chrome DevTools, GitHub bridges — see [MCP Servers](mcp-servers.md) for the full catalog of 400+ |
+| **Plugins** | 47 | Media Converter (ffmpeg), Cryptography Toolkit, Image Compressor, JSON Schema Generator, .env Manager, Cron Scheduler, Markdown Exporter, Cron Expression Builder, JSONPath Explorer, YAML Tools, XML Tools, CSV Tools, Hash & Checksum, JWT Inspector, Timestamp Converter, Three-Way Merge, Regex Explainer, Text Statistics, Case Converter, Line Tools, Escape & Unescape, Placeholder Text, QR Code, SVG Optimiser, Icon Set Generator, Screenshot Annotator, Screen Recorder, Clipboard History, Scratch Notes, TODO Scanner, License Header, Environment Diff, Port Forwarding, Database Browser, API Mock Server, Load Simulation, Dependency Graph |
 
 ## Installing
 

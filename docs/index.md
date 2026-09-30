@@ -13,11 +13,15 @@ locally on your GPU or in the cloud.
 | **Axion AI Assistant** | Chat with the agent, queue messages, watch the plan execute |
 | **DAG Pipeline** | Autonomous sub-agent pipeline — each role runs on the model you assign |
 | **Fallback Tiers** | Multi-provider failover chain with API keys and live balances |
-| **MCP Hub** | Connect Model Context Protocol servers (marketplace + GitHub installs) |
-| **Marketplace** | Built-in catalog **plus** an external marketplace (Open VSX) that only offers what Axion can run |
-| **Developer Tools** | Toolchain detection and one-click installs for compilers and debuggers |
+| **MCP Hub** | Connect Model Context Protocol servers — 400+ in the marketplace, plus GitHub installs |
+| **Marketplace** | ~190 built-in skills, agents, compactors, and plugins **plus** an external marketplace (Open VSX) that only offers what Axion can run |
+| **Developer Tools** | 76 toolchains detected and installable, 46 debug adapters, and a PATH repair button |
+| **Language support** | 16 LSP capabilities — completion, go-to-definition, references, rename, code actions, signature help, formatting, outline, workspace symbols, folding, call hierarchy, inlay hints, semantic tokens, and expand-selection |
 | **Usage Analytics** | Token spend, credits, and live provider balances |
 | **Report a Bug** | One-click pre-filled issues on GitHub or Gitea - and it opens itself when an error is thrown |
+
+The **status bar** at the bottom shows the live AI provider and model in use, with a green dot
+while the AI is working. It follows failover, so you can see which provider actually answered.
 
 ## Three workspace modes
 
